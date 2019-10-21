@@ -2,14 +2,14 @@ package com;
 
 public class BinaryTest {
     public static void main(String[] args) {
-        int a = 19;
+        int a = 2;
         System.out.println(Integer.toBinaryString(a));
-        System.out.println("第"+(CtlFlagEnum.CTL_F.getIndex())+"位是否为1："+CtrlFalgUtils.getOneByIndex(a,CtlFlagEnum.CTL_F.getIndex()));
-        System.out.println("第"+(CtlFlagEnum.CTL_G.getIndex())+"位是否为1："+CtrlFalgUtils.getOneByIndex(a,CtlFlagEnum.CTL_G.getIndex()));
-
-        System.out.println(Integer.toBinaryString((1<<31)-1 - (1<<2)));
-        int b = CtrlFalgUtils.setZeroByIndex(a,0);
-        System.out.println(Integer.toBinaryString(b));
+//        System.out.println("第"+(CtlFlagEnum.CTL_F.getIndex())+"位是否为1："+CtrlFalgUtils.getOneByIndex(a,CtlFlagEnum.CTL_F.getIndex()));
+//        System.out.println("第"+(CtlFlagEnum.CTL_G.getIndex())+"位是否为1："+CtrlFalgUtils.getOneByIndex(a,CtlFlagEnum.CTL_G.getIndex()));
+//
+//        System.out.println(Integer.toBinaryString((1<<31)-1 - (1<<2)));
+       int b = CtrlFalgUtils.setZeroByIndex(a,1);
+        System.out.println("b-->"+Integer.toBinaryString(b));
 
         int b1 = CtrlFalgUtils.setZeroByIndex(a,1);
         System.out.println(Integer.toBinaryString(b1));

@@ -1,5 +1,9 @@
 package com.e8;
 
+import com.alibaba.fastjson.JSON;
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Function;
 
 public class Test{
@@ -8,6 +12,16 @@ public class Test{
     }
 
     public static void main(String[] args) {
+//        testException();
+        List<String > a = new ArrayList<>();
+        a.add("da");
+        a.add("dad");
+        String b =  JSON.toJSONString(a);
+        System.out.println(b);
+        System.out.println(JSON.parseObject(b,List.class));
+    }
+
+    private static void testException() {
         try {
             f((t)->{
                 System.out.println(t);

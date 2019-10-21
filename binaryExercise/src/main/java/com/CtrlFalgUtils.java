@@ -1,8 +1,6 @@
 package com;
 
 public class CtrlFalgUtils {
-    final int a = 1<<32;
-
     /**
      * 查询该标志位的数是否为1
      * @param toGet

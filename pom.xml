@@ -12,7 +12,21 @@
         <module>binaryExercise</module>
         <module>polyExercise</module>
         <module>jdkExercise</module>
+        <module>designModernExercise</module>
     </modules>
+
+    <properties>
+        <fastjson.vesion>1.2.60</fastjson.vesion>
+    </properties>
+
+    <dependencies>
+        <!-- fastjson -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>${fastjson.vesion}</version>
+        </dependency>
+    </dependencies>
 
 
 </project>
