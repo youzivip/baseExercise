@@ -18,6 +18,11 @@ public class TypeReferenceTest {
     public static void main(String[] args) throws NoSuchFieldException {
 //        testListStr();
 //        testListObjetc();
+//        get1();
+        System.out.println("8B6697227CBCA902B1A0925D40FAA00B353F2DF4359D2099".length());
+    }
+
+    private static void get1() throws NoSuchFieldException {
         //java虽然运行时会有类型擦除，但是会保留Field的泛型信息，可以通过Field.getGenericType() 取字段的泛型。
         TypeReferenceTest kest = new TypeReferenceTest();
 
