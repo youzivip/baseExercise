@@ -13,6 +13,7 @@
         <module>polyExercise</module>
         <module>jdkExercise</module>
         <module>designModernExercise</module>
+        <module>nettyExercise</module>
     </modules>
 
     <properties>
