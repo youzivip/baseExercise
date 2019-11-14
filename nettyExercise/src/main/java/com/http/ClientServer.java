@@ -1,4 +1,4 @@
-package com;
+package com.http;
 
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.ChannelFuture;
@@ -46,8 +46,10 @@ public class ClientServer {
 
         //连接服务器
 //        ChannelFuture future = bootstrap.connect("localhost", 8080).sync();
-        ChannelFuture future = bootstrap.connect(new InetSocketAddress("http://bizapi.jd.local/api/product/getDetail",80)).sync();
-
+        ChannelFuture future = bootstrap.connect(new InetSocketAddress("localhost",1234)).sync();
+        future.addListener(f->{
+            System.out.println("连接建立了"+f.get());
+        });
         //当通道关闭了，就继续往下走
         future.channel().closeFuture().sync();
 

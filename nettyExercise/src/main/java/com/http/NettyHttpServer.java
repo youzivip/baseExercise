@@ -1,4 +1,4 @@
-package com;
+package com.http;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
@@ -11,8 +11,6 @@ import io.netty.handler.codec.http.HttpObjectAggregator;
 import io.netty.handler.codec.http.HttpRequestDecoder;
 import io.netty.handler.codec.http.HttpResponseEncoder;
 import io.netty.handler.stream.ChunkedWriteHandler;
-
-import java.nio.channels.SocketChannel;
 
 public class NettyHttpServer {
     private int inetPort;
@@ -57,6 +55,11 @@ public class NettyHttpServer {
             // 4. 监听端口（服务器host和port端口），同步返回
             // ChannelFuture future = server.bind(inetHost, this.inetPort).sync();
             ChannelFuture future = server.bind(this.inetPort).sync();
+
+            future.addListener(f->{
+                System.out.println("完成了绑定--》"+f.get());
+            });
+
             // 当通道关闭时继续向后执行，这是一个阻塞方法
             future.channel().closeFuture().sync();
         } finally {

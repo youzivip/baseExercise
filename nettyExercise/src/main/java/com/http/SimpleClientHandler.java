@@ -1,4 +1,4 @@
-package com;
+package com.http;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
@@ -8,7 +8,6 @@ import io.netty.handler.codec.http.*;
 import io.netty.util.CharsetUtil;
 
 import java.net.URI;
-import java.nio.charset.Charset;
 
 public class SimpleClientHandler extends ChannelInboundHandlerAdapter {
     /**
