@@ -1,6 +1,6 @@
 package com.finalTest;
 
-import domin.Person;
+import com.type.Person;
 import sun.misc.Unsafe;
 
 import java.lang.reflect.Field;
@@ -26,6 +26,18 @@ public class FinalTest {
     final static Person person = new Person();
     static Person person2 = new Person();
     public static void main(String[] args) throws NoSuchFieldException {
+//        testOffSet();
+        person2 = person;
+        person2.setName("是2呀");
+        System.out.println(person);
+
+        Person person3 = new Person();
+        person3.setName("我是3，看final有没有");
+        person2 = person3;
+        System.out.println(person);
+    }
+
+    private static void testOffSet() throws NoSuchFieldException {
         person.setName("name");
         person2.setName("name");
 
@@ -35,8 +47,9 @@ public class FinalTest {
         person.setName("asda");
         person2.setName("asda");
 //        System.out.println(person.getName());
-        System.out.println("person第二次的地址："+unsafe.fieldOffset(FinalTest.class.getDeclaredField("person")));;
-        System.out.println("person2："+unsafe.fieldOffset(FinalTest.class.getDeclaredField("person2")));;
-
+        System.out.println("person第二次的地址："+unsafe.fieldOffset(FinalTest.class.getDeclaredField("person")));
+        ;
+        System.out.println("person2："+unsafe.fieldOffset(FinalTest.class.getDeclaredField("person2")));
+        ;
     }
 }

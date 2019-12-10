@@ -1,14 +1,8 @@
 package com.regex;
 
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONArray;
-import com.sun.deploy.util.StringUtils;
-
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
-import java.util.stream.Stream;
 
 
 public class RegexTest {
