@@ -17,13 +17,13 @@ public class WorkerThread extends Thread {
         task.run();
         while (true){
             Runnable task1;
-            synchronized (queue){
+          //  synchronized (queue){
                 task1 = queue.peek();
                 if (task1 != null) {
                     System.out.println(Thread.currentThread().getName() + "取了一个任务：" + queue.size());
                     queue.remove(task1);
                 }
-            }
+   //         }
             try {
                 if(task1!=null){
                     task1.run();
@@ -31,9 +31,9 @@ public class WorkerThread extends Thread {
 
             }catch (Exception e){
                 e.printStackTrace();
-                synchronized (queue){
+     //           synchronized (queue){
                     queue.add(task1);
-                }
+      //          }
 
 
             }
